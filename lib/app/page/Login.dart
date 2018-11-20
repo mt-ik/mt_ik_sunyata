@@ -1,5 +1,6 @@
-// import 'dart:async';
+import 'dart:developer';
 
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:mt_ik_sunyata/app/common/config/config.dart';
@@ -97,10 +98,8 @@ class _LoginState extends State<Login> {
                         CommonUtils.showLoadingDialog(context);
                         UserDao.login(_userName.trim(), _passWord.trim(), store).then((res) {
                           Navigator.pop(context);
-                          Map<String, bool> res = {
-                            'result': true,
-                          };
-                          if (res != null) {
+                          debugger(when: true);
+                          if (res != null && res.result) {
                             new Future.delayed(const Duration(seconds: 1), () {
                               MKNavigator.goHome(context);
                               return true;
