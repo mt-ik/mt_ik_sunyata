@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:gsy_github_app_flutter/common/model/EventPayload.dart';
-import 'package:gsy_github_app_flutter/common/model/Repository.dart';
-import 'package:mt_ik_sunyata/app/common/model/User.dart';
+import 'package:mt_ik_sunyata/app/model/EventPayload.dart';
+import 'package:mt_ik_sunyata/app/model/Repository.dart';
+import 'package:mt_ik_sunyata/app/model/User.dart';
 
 /**
  * Created by guoshuyu

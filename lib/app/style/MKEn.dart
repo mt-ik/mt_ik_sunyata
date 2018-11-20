@@ -1,4 +1,4 @@
-import 'package:mt_ik_sunyata/app/common/style/MKBase.dart';
+import 'package:mt_ik_sunyata/app/style/MKBase.dart';
 
 class MKEn extends MKBase {
   @override

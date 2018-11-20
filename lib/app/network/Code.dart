@@ -1,5 +1,5 @@
 import 'package:event_bus/event_bus.dart';
-import 'package:mt_ik_sunyata/app/common/event/HttpErrorEvent.dart';
+import 'package:mt_ik_sunyata/app/event/HttpErrorEvent.dart';
 ///错误编码
 class Code {
   ///网络错误

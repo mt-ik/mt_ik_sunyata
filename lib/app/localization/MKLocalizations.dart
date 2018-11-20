@@ -2,9 +2,9 @@ import 'dart:developer';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:mt_ik_sunyata/app/common/style/MKBase.dart';
-import 'package:mt_ik_sunyata/app/common/style/MKEn.dart';
-import 'package:mt_ik_sunyata/app/common/style/MKZh.dart';
+import 'package:mt_ik_sunyata/app/style/MKBase.dart';
+import 'package:mt_ik_sunyata/app/style/MKEn.dart';
+import 'package:mt_ik_sunyata/app/style/MKZh.dart';
 
 ///自定义多语言实现
 class MKLocalizations {

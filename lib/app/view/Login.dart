@@ -3,15 +3,15 @@ import 'dart:developer';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:mt_ik_sunyata/app/common/config/config.dart';
-import 'package:mt_ik_sunyata/app/common/local/localStorage.dart';
-import 'package:mt_ik_sunyata/app/common/redux/MKState.dart';
+import 'package:mt_ik_sunyata/app/config/config.dart';
+import 'package:mt_ik_sunyata/app/local/localStorage.dart';
+import 'package:mt_ik_sunyata/app/redux/MKState.dart';
 import 'package:mt_ik_sunyata/app/widget/MKInput.dart';
 import 'package:mt_ik_sunyata/app/widget/MKFlexButton.dart';
-import 'package:mt_ik_sunyata/app/common/utils/MKNavigator.dart';
-import 'package:mt_ik_sunyata/app/common/utils/CommonUtils.dart';
-import 'package:mt_ik_sunyata/app/common/style/MKStyle.dart';
-import 'package:mt_ik_sunyata/app/common/dao/UserDao.dart';
+import 'package:mt_ik_sunyata/app/utils/MKNavigator.dart';
+import 'package:mt_ik_sunyata/app/utils/CommonUtils.dart';
+import 'package:mt_ik_sunyata/app/style/MKStyle.dart';
+import 'package:mt_ik_sunyata/app/service/UserService.dart';
 
 class Login extends StatefulWidget {
   static final String mkName = 'login';
@@ -96,7 +96,7 @@ class _LoginState extends State<Login> {
                           return;
                         }
                         CommonUtils.showLoadingDialog(context);
-                        UserDao.login(_userName.trim(), _passWord.trim(), store).then((res) {
+                        UserService.login(_userName.trim(), _passWord.trim(), store).then((res) {
                           Navigator.pop(context);
                           debugger(when: true);
                           if (res != null && res.result) {

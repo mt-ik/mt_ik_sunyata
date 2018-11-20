@@ -2,9 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:mt_ik_sunyata/app/common/style/MKBase.dart';
-import 'package:mt_ik_sunyata/app/common/style/MKStyle.dart';
-import 'package:mt_ik_sunyata/app/common/localization/MKLocalizations.dart';
+import 'package:mt_ik_sunyata/app/style/MKBase.dart';
+import 'package:mt_ik_sunyata/app/style/MKStyle.dart';
+import 'package:mt_ik_sunyata/app/localization/MKLocalizations.dart';
 
 /*
  * 通用逻辑

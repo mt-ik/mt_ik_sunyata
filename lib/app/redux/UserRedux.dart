@@ -1,5 +1,5 @@
 import 'package:redux/redux.dart';
-import 'package:mt_ik_sunyata/app/common/model/User.dart';
+import 'package:mt_ik_sunyata/app/model/User.dart';
 
 final userReducer = combineReducers<User>([
   TypedReducer<User, UpdateUserAction>(_updateLoaded)

@@ -1,61 +1,62 @@
 import 'dart:developer';
-import 'package:dio/dio.dart';
+import 'dart:io';
 import 'dart:collection';
+import 'package:dio/dio.dart';
 import 'package:connectivity/connectivity.dart';
-import 'package:mt_ik_sunyata/app/common/net/ResultData.dart';
-import 'package:mt_ik_sunyata/app/common/net/Code.dart';
-import 'package:mt_ik_sunyata/app/common/config/config.dart';
-import 'package:mt_ik_sunyata/app/common/local/localStorage.dart';
+import 'package:mt_ik_sunyata/app/network/ResultData.dart';
+import 'package:mt_ik_sunyata/app/network/Code.dart';
+import 'package:mt_ik_sunyata/app/config/Config.dart';
+import 'package:mt_ik_sunyata/app/local/localStorage.dart';
 
-///http请求
+/// http请求
 class HttpManager {
     static const CONTENT_TYPE_JSON = "application/json";
     static const CONTENT_TYPE_FORM = "application/x-www-form-urlencoded";
-    static Map optionParams = {
-        'timeoutMs': 15000,
+
+    static Map<String, dynamic> optionsDio = {
         'token': null,
         'authorizationCode': null,
     };
 
-    ///发起网络请求
-    ///[ url] 请求url
-    ///[ params] 请求参数
-    ///[ header] 外加头
-    ///[ option] 配置
-    static netFetch(url, params, Map<String, String> header, Options option, {noTip = false}) async {
-        ///没有网络
+    /// 发起网络请求
+    /// [ url] 请求url
+    /// [ params] 请求参数
+    /// [ header] 外加头
+    /// [ option] 配置
+    static netFetch(url, params, Map<String, String> header, Options option, { noTip = false }) async {
+        /// 网路判断-没有网络
         var connectivityResult = await (new Connectivity().checkConnectivity());
         if (connectivityResult == ConnectivityResult.none) {
             return new ResultData(Code.errorHandleFunction(Code.NETWORK_ERROR, "", noTip), false, Code.NETWORK_ERROR);
         }
 
+
+        /// header 处理
         Map<String, String> headers = new HashMap();
         if (header != null) {
             headers.addAll(header);
         }
-
         ///授权码
-        if (optionParams["authorizationCode"] == null) {
+        if (optionsDio["authorizationCode"] == null) {
             var authorizationCode = await getAuthorization();
             if (authorizationCode != null) {
-                optionParams["authorizationCode"] = authorizationCode;
+                optionsDio["authorizationCode"] = authorizationCode;
             }
         }
+        headers["Authorization"] = optionsDio["authorizationCode"];
 
-        headers["Authorization"] = optionParams["authorizationCode"];
 
-        if (option != null) {
-            option.headers = headers;
-        } else{
-            option = new Options(method: "get");
-            option.headers = headers;
+        if (option == null) {
+            option = new Options( method: 'GET');
         }
-
-        ///超时
-        option.connectTimeout = 15000;
+        option.baseUrl = '${Config.PROTOCOL}${Config.HOST}:${Config.PORT}';
+        option.headers = headers;
+        option.connectTimeout = Config.CONNECT_TIMEOUT;
+        option.receiveTimeout = Config.RECEIVE_TIMEOUT;
         
         Dio dio = new Dio();
-         dio.interceptor.request.onSend = (Options options) async {
+        /// 发送前拦截器
+        dio.interceptor.request.onSend = (Options options) async {
             debugger(when: true);
             /// 异步拦截
             // Response response = await dio.get("/token");
@@ -69,6 +70,7 @@ class HttpManager {
             }
             // lock()、unlock()、clear() 请求锁定、解锁、清空队列
         };
+        /// 发送成功拦截器
         dio.interceptor.response.onSuccess = (Response response) {
             debugger(when: true);
             // 在返回响应数据之前做一些预处理
@@ -81,6 +83,7 @@ class HttpManager {
                 return dio.reject(customer);
             }
         };
+        /// 发送失败拦截器
         dio.interceptor.response.onError = (DioError e){
             debugger(when: true);
             // 当请求失败时做一些预处理
@@ -117,8 +120,8 @@ class HttpManager {
             if (response != null) {
                 print('返回参数: ' + response.toString());
             }
-            if (optionParams["authorizationCode"] != null) {
-                print('authorizationCode: ' + optionParams["authorizationCode"]);
+            if (optionsDio["authorizationCode"] != null) {
+                print('authorizationCode: ' + optionsDio["authorizationCode"]);
             }
         }
 
@@ -128,8 +131,8 @@ class HttpManager {
             } else {
                 var responseJson = response.data;
                 if (response.statusCode == 201 && responseJson["token"] != null) {
-                    optionParams["authorizationCode"] = 'token ' + responseJson["token"];
-                    await LocalStorage.save(Config.TOKEN_KEY, optionParams["authorizationCode"]);
+                    optionsDio["authorizationCode"] = 'token ' + responseJson["token"];
+                    await LocalStorage.save(Config.TOKEN_KEY, optionsDio["authorizationCode"]);
                 }
             }
             if (response.statusCode == 200 || response.statusCode == 201) {
@@ -144,7 +147,7 @@ class HttpManager {
 
     ///清除授权
     static clearAuthorization() {
-        optionParams["authorizationCode"] = null;
+        optionsDio["authorizationCode"] = null;
         LocalStorage.remove(Config.TOKEN_KEY);
     }
 
@@ -160,7 +163,7 @@ class HttpManager {
                 return "Basic $basic";
             }
         } else {
-            optionParams["authorizationCode"] = token;
+            optionsDio["authorizationCode"] = token;
             return token;
         }
     }

@@ -4,8 +4,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:mt_ik_sunyata/app/common/redux/MKState.dart';
-import 'package:mt_ik_sunyata/app/common/utils/MKNavigator.dart';
+import 'package:mt_ik_sunyata/app/redux/MKState.dart';
+import 'package:mt_ik_sunyata/app/utils/MKNavigator.dart';
 
 
 class Welcome extends StatefulWidget {

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:mt_ik_sunyata/app/common/redux/MKState.dart';
-import 'package:mt_ik_sunyata/app/common/model/User.dart';
+import 'package:mt_ik_sunyata/app/redux/MKState.dart';
+import 'package:mt_ik_sunyata/app/model/User.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:mt_ik_sunyata/app/page/Welcome.dart';
-import 'package:mt_ik_sunyata/app/page/Login.dart';
-import 'package:mt_ik_sunyata/app/page/Home.dart';
-import 'package:mt_ik_sunyata/app/common/style/MKStyle.dart';
-import 'package:mt_ik_sunyata/app/common/localization/MKLocalizationsDelegate.dart';
+import 'package:mt_ik_sunyata/app/view/Welcome.dart';
+import 'package:mt_ik_sunyata/app/view/Login.dart';
+import 'package:mt_ik_sunyata/app/view/Home.dart';
+import 'package:mt_ik_sunyata/app/style/MKStyle.dart';
+import 'package:mt_ik_sunyata/app/localization/MKLocalizationsDelegate.dart';
 
 void main() {
   runApp(new MTIKSunyata());

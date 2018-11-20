@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mt_ik_sunyata/app/page/Home.dart';
-import 'package:mt_ik_sunyata/app/page/Login.dart';
+import 'package:mt_ik_sunyata/app/view/Home.dart';
+import 'package:mt_ik_sunyata/app/view/Login.dart';
 
 class MKNavigator {
   /// 替换

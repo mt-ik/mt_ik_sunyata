@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mt_ik_sunyata/app/common/localization/MKLocalizations.dart';
+import 'package:mt_ik_sunyata/app/localization/MKLocalizations.dart';
 
 class MKLocalizationsDelegate extends LocalizationsDelegate<MKLocalizations> {
 
