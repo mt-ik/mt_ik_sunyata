@@ -1,16 +1,18 @@
 import 'dart:async';
+import 'package:redux/redux.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:mt_ik_sunyata/app/style/MKBase.dart';
 import 'package:mt_ik_sunyata/app/style/MKStyle.dart';
 import 'package:mt_ik_sunyata/app/localization/MKLocalizations.dart';
+import 'package:mt_ik_sunyata/app/redux/ThemeRedux.dart';
+import 'package:mt_ik_sunyata/app/redux/LocaleRedux.dart';
 
 /*
  * 通用逻辑
  */
 class CommonUtils {
-  static Future<Null> showLoadingDialog(BuildContext context) {
+    static Future<Null> showLoadingDialog(BuildContext context) {
     return showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -43,7 +45,44 @@ class CommonUtils {
     );
   }
 
-  static MKBase getLocale(BuildContext context) {
-    return MKLocalizations.of(context).currentLocalized;
-  }
+    static MKBase getLocale(BuildContext context) {
+        return MKLocalizations.of(context).currentLocalized;
+    }
+
+    /// 切换主题
+    static pushTheme(Store store, int index) {
+        ThemeData themeData;
+        List<Color> colors = getThemeListColor();
+        themeData = new ThemeData(primarySwatch: colors[index], platform: TargetPlatform.iOS);
+        store.dispatch(new RefreshThemeDataAction(themeData));
+    }
+
+    // 主题列表
+    static List<Color> getThemeListColor() {
+        return [
+            MKColors.primarySwatch,
+            Colors.brown,
+            Colors.blue,
+            Colors.teal,
+            Colors.amber,
+            Colors.blueGrey,
+            Colors.deepOrange,
+        ];
+    }
+
+
+    /// 切换语言
+    static changeLocale(Store store, int index) {
+        Locale locale = store.state.platformLocale;
+        switch (index) {
+            case 1:
+                locale = Locale('zh', 'CH');
+                break;
+            case 2:
+                locale = Locale('en', 'US');
+                break;
+        }
+        
+        store.dispatch(RefreshLocaleAction(locale));
+    }
 }

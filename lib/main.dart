@@ -11,18 +11,26 @@ import 'package:mt_ik_sunyata/app/style/MKStyle.dart';
 import 'package:mt_ik_sunyata/app/localization/MKLocalizationsDelegate.dart';
 
 void main() {
+    /// app主入口
     runApp(new MTIKSunyata());
-    PaintingBinding.instance.imageCache.maximumSize = 100;
+    /**
+     * Flutter中ImageCache缓存的是ImageStream对象, 也就是缓存的是一个异步加载的图片的对象
+     * 在图片加载解码完成之前, 无法知道到底将要消耗多少内存
+     * 所以容易产生大量的IO操作, 导致内存峰值过高
+     */
+    PaintingBinding.instance.imageCache.maximumSize = 100; /// 图片缓存个数限制
+    PaintingBinding.instance.imageCache.maximumSizeBytes = 50 << 20; /// 图片缓存大小50M
 }
 
 class MTIKSunyata extends StatelessWidget {
+    /// 初始化全局Store状态
     final store = new Store<MKState>(
         appReducer,
         initialState: new MKState(
             user: User.empty(),
             themeData: new ThemeData(
                 primarySwatch: MKColors.primarySwatch,
-                platform: TargetPlatform.iOS//滑动返回
+                platform: TargetPlatform.iOS ///滑动返回
             ),
             locale: Locale('zh', 'CH'),
         )
@@ -45,8 +53,10 @@ class MTIKSunyata extends StatelessWidget {
                     ],
                     locale: store.state.locale,
                     supportedLocales: [store.state.locale],
+                    theme: store.state.themeData,
                     routes: {
                         Welcome.MK_ROUTER: (context) {
+                            store.state.platformLocale = Localizations.localeOf(context);
                             return new Welcome();
                         },
                         Home.MK_ROUTER: (context) {

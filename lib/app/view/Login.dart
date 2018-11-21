@@ -48,7 +48,7 @@ class _LoginState extends State<Login> {
                     FocusScope.of(context).requestFocus(new FocusNode());
                 },
                 child: new Container(
-                    color: Colors.black87, ///Theme.of(context).primaryColor,
+                    color: Theme.of(context).primaryColor,
                     child: new Center(
                         child: new Card(
                         elevation: 5.0,
@@ -61,7 +61,7 @@ class _LoginState extends State<Login> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
-                                    new Image(image: new AssetImage(MKICons.DEFAULT_USER_ICON), width: 220.0, height: 220.0),
+                                    new Image(image: new AssetImage(MKICons.DEFAULT_USER_ICON), width: 100.0, height: 100.0),
                                     new Padding(padding: new EdgeInsets.all(10.0)),
                                     new MKInput(
                                         hintText: CommonUtils.getLocale(context).login_username_hint_text,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mt_ik_sunyata/app/model/User.dart';
 import 'package:mt_ik_sunyata/app/redux/UserRedux.dart';
 import 'package:mt_ik_sunyata/app/redux/ThemeRedux.dart';
-import 'package:mt_ik_sunyata/app/redux/LocalRedux.dart';
+import 'package:mt_ik_sunyata/app/redux/LocaleRedux.dart';
 /*
  * 全局Store.State
  */
