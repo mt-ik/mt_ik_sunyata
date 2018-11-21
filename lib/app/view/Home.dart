@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  static final String mkName = 'home';
+  static const String MK_ROUTER = 'home';
 
   /// 单击提示推出
   Future<bool> _dialogExitApp(BuildContext context) {

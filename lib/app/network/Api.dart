@@ -6,12 +6,12 @@ import 'package:connectivity/connectivity.dart';
 import 'package:mt_ik_sunyata/app/network/ResultData.dart';
 import 'package:mt_ik_sunyata/app/network/Code.dart';
 import 'package:mt_ik_sunyata/app/config/Config.dart';
-import 'package:mt_ik_sunyata/app/local/localStorage.dart';
+import 'package:mt_ik_sunyata/app/local/LocalStorage.dart';
 
 /// http请求
 class HttpManager {
-    static const CONTENT_TYPE_JSON = "application/json";
-    static const CONTENT_TYPE_FORM = "application/x-www-form-urlencoded";
+    static const String CONTENT_TYPE_JSON = "application/json";
+    static const String CONTENT_TYPE_FORM = "application/x-www-form-urlencoded";
 
     static Map<String, dynamic> optionsDio = {
         'token': null,
@@ -45,7 +45,7 @@ class HttpManager {
         }
         headers["Authorization"] = optionsDio["authorizationCode"];
 
-
+        /// 组织Option
         if (option == null) {
             option = new Options( method: 'GET');
         }
@@ -57,7 +57,6 @@ class HttpManager {
         Dio dio = new Dio();
         /// 发送前拦截器
         dio.interceptor.request.onSend = (Options options) async {
-            debugger(when: true);
             /// 异步拦截
             // Response response = await dio.get("/token");
             // options.headers["token"] = response.data["data"]["token"];
@@ -72,7 +71,6 @@ class HttpManager {
         };
         /// 发送成功拦截器
         dio.interceptor.response.onSuccess = (Response response) {
-            debugger(when: true);
             // 在返回响应数据之前做一些预处理
             if (response != null) {
                 return response;
@@ -85,22 +83,24 @@ class HttpManager {
         };
         /// 发送失败拦截器
         dio.interceptor.response.onError = (DioError e){
-            debugger(when: true);
             // 当请求失败时做一些预处理
             return e;
         };
         Response response;
+
         try {
             response = await dio.request(url, data: params, options: option);
             print(response.data.toString());
         } on DioError catch (e) {
-            
+
             Response errorResponse;
+
             if (e.response != null) {
                 errorResponse = e.response;
             } else {
                 errorResponse = new Response(statusCode: 666);
             }
+
             if (e.type == DioErrorType.CONNECT_TIMEOUT) {
                 errorResponse.statusCode = Code.NETWORK_TIMEOUT;
             }
@@ -108,21 +108,8 @@ class HttpManager {
                 print('请求异常: ' + e.toString());
                 print('请求异常url: ' + url);
             }
+
             return new ResultData(Code.errorHandleFunction(errorResponse.statusCode, e.message, noTip), false, errorResponse.statusCode);
-        }
-        debugger(when: true);
-        if (Config.DEBUG) {
-            print('请求url: ' + url);
-            print('请求头: ' + option.headers.toString());
-            if (params != null) {
-                print('请求参数: ' + params.toString());
-            }
-            if (response != null) {
-                print('返回参数: ' + response.toString());
-            }
-            if (optionsDio["authorizationCode"] != null) {
-                print('authorizationCode: ' + optionsDio["authorizationCode"]);
-            }
         }
 
         try {
@@ -135,13 +122,15 @@ class HttpManager {
                     await LocalStorage.save(Config.TOKEN_KEY, optionsDio["authorizationCode"]);
                 }
             }
+            
             if (response.statusCode == 200 || response.statusCode == 201) {
                 return new ResultData(response.data, true, Code.SUCCESS, headers: response.headers);
             }
+
         } catch (e) {
-            print(e.toString() + url);
             return new ResultData(response.data, false, response.statusCode, headers: response.headers);
         }
+
         return new ResultData(Code.errorHandleFunction(response.statusCode, "", noTip), false, response.statusCode);
     }
 

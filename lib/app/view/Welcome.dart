@@ -7,10 +7,9 @@ import 'package:redux/redux.dart';
 import 'package:mt_ik_sunyata/app/redux/MKState.dart';
 import 'package:mt_ik_sunyata/app/utils/MKNavigator.dart';
 
-
 class Welcome extends StatefulWidget {
 
-  static final mkName = '/';
+  static const String MK_ROUTER = '/';
 
   @override
   _WelcomeState createState() => _WelcomeState();
@@ -49,7 +48,7 @@ class _WelcomeState extends State<Welcome> {
         return new Container(
           color: Colors.white,
           child: new Center(
-            child: new Image(image: new AssetImage('assets/images/welcome.png')),
+            child: new Image(image: new AssetImage('assets/sunyata/mt_ik_14.jpeg')),
           ),
         );
       },

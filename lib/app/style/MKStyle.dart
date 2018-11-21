@@ -210,7 +210,7 @@ class MKConstant {
 class MKICons {
   static const String FONT_FAMILY = 'wxcIconFont';
 
-  static const String DEFAULT_USER_ICON = 'assets/images/logo.png';
+  static const String DEFAULT_USER_ICON = 'assets/sunyata/mt_ik_15.jpeg';
   static const String DEFAULT_IMAGE = 'assets/images/default_img.png';
   static const String DEFAULT_REMOTE_PIC = 'https://raw.githubusercontent.com/CarGuo/GSYGithubAppFlutter/master/static/images/logo.png';
 

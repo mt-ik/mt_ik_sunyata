@@ -13,10 +13,10 @@ class MKNavigator {
   }
   /// 主页
   static goHome(BuildContext context) {
-    Navigator.pushReplacementNamed(context, Home.mkName);
+    Navigator.pushReplacementNamed(context, Home.MK_ROUTER);
   }
   /// 登录页
   static goLogin(BuildContext context) {
-    Navigator.pushReplacementNamed(context, Login.mkName);
+    Navigator.pushReplacementNamed(context, Login.MK_ROUTER);
   }
 }

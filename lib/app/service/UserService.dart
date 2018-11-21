@@ -1,6 +1,4 @@
-import 'dart:developer';
 import 'dart:convert';
-import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:mt_ik_sunyata/app/service/DataResult.dart';
 import 'package:mt_ik_sunyata/app/config/Config.dart';
@@ -28,20 +26,11 @@ class UserService {
 
         var res = await HttpManager.netFetch(UserApi.LOGIN['API'], params, null, new Options(method: UserApi.LOGIN['METHOD']));
         
-        var resultData = {};
-        
-        debugger(when: true);
         if (res != null && res.result) {
-        await LocalStorage.save(Config.USER_PW_KEY, password);
-        // var resultData = await getUserInfo(null);
-        resultData = res.result;
-        //   if (Config.DEBUG) {
-        //     print("user result " + resultData.result.toString());
-        //     print(resultData.data);
-        //     print(res.data.toString());
-        //   }
-        // store.dispatch(new UpdateUserAction(resultData.data));
+            await LocalStorage.save(Config.USER_PW_KEY, password);
+            // var resultData = await getUserInfo(null);
+            // store.dispatch(new UpdateUserAction(resultData.data));
         }
-        return new DataResult(resultData, res.result);
+        return new DataResult(res.data, res.result);
     }
 }

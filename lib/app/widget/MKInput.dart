@@ -32,7 +32,7 @@ class _MKInputState extends State<MKInput> {
       obscureText: widget.obscureText,
       decoration: new InputDecoration(
         hintText: widget.hintText,
-        icon: new Icon(widget.iconData),
+        icon: widget.iconData == null ? null : new Icon(widget.iconData),
       ),
     );
   }

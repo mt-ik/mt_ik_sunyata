@@ -11,55 +11,55 @@ import 'package:mt_ik_sunyata/app/style/MKStyle.dart';
 import 'package:mt_ik_sunyata/app/localization/MKLocalizationsDelegate.dart';
 
 void main() {
-  runApp(new MTIKSunyata());
-   PaintingBinding.instance.imageCache.maximumSize = 100;
+    runApp(new MTIKSunyata());
+    PaintingBinding.instance.imageCache.maximumSize = 100;
 }
 
 class MTIKSunyata extends StatelessWidget {
-  final store = new Store<MKState>(
-    appReducer,
-    initialState: new MKState(
-      user: User.empty(),
-      themeData: new ThemeData(
-        primarySwatch: MKColors.primarySwatch,
-        platform: TargetPlatform.iOS//滑动返回
-      ),
-      locale: Locale('zh', 'CH'),
-    )
-  );
-
-  MTIKSunyata({Key key }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return new StoreProvider(
-      store: store,
-      child: new StoreBuilder<MKState>(builder: (context, store) {
-        return new MaterialApp(
-          title: 'MT.IK.Sunyata',
-          ///多语言实现代理
-            localizationsDelegates: [
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              MKLocalizationsDelegate.delegate,
-            ],
-            locale: store.state.locale,
-            supportedLocales: [store.state.locale],
-          routes: {
-            Welcome.mkName: (context) {
-              return new Welcome();
-            },
-            Home.mkName: (context) {
-              return new Home();
-            },
-            Login.mkName: (context) {
-              return new Login();
-            }
-          },
-        );
-      }),
+    final store = new Store<MKState>(
+        appReducer,
+        initialState: new MKState(
+            user: User.empty(),
+            themeData: new ThemeData(
+                primarySwatch: MKColors.primarySwatch,
+                platform: TargetPlatform.iOS//滑动返回
+            ),
+            locale: Locale('zh', 'CH'),
+        )
     );
-  }
+
+    MTIKSunyata({Key key }) : super(key: key);
+
+    @override
+    Widget build(BuildContext context) {
+        return new StoreProvider(
+            store: store,
+            child: new StoreBuilder<MKState>(builder: (context, store) {
+                return new MaterialApp(
+                    title: 'MT.IK.Sunyata',
+                    ///多语言实现代理
+                    localizationsDelegates: [
+                        GlobalMaterialLocalizations.delegate,
+                        GlobalWidgetsLocalizations.delegate,
+                        MKLocalizationsDelegate.delegate,
+                    ],
+                    locale: store.state.locale,
+                    supportedLocales: [store.state.locale],
+                    routes: {
+                        Welcome.MK_ROUTER: (context) {
+                            return new Welcome();
+                        },
+                        Home.MK_ROUTER: (context) {
+                            return new Home();
+                        },
+                        Login.MK_ROUTER: (context) {
+                            return new Login();
+                        }
+                    },
+                );
+            }),
+        );
+    }
 }
 
 class SunyataApp extends StatefulWidget {

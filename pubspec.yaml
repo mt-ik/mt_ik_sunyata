@@ -56,7 +56,8 @@ flutter:
   assets:
     - assets/girl.jpeg
     - assets/images/logo.png
-    - assets/images/welcome.png
+    - assets/sunyata/mt_ik_14.jpeg
+    - assets/sunyata/mt_ik_15.jpeg
     - assets/images/default_img.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -84,3 +85,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
+  fonts:
+    - family: wxcIconFont
+      fonts:
+        - asset: assets/font/iconfont.ttf
