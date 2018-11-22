@@ -1,280 +1,382 @@
 import 'package:mt_ik_sunyata/app/style/MKBase.dart';
 
 class MKEn extends MKBase {
-  @override
-  String welcomeMessage = "Welcome To Flutter";
 
-  @override
-  String app_name = "MT.IK.SUNYARA";
+    @override
+    String welcomeMessage = "Welcome To Flutter";
 
-  @override
-  String app_ok = "ok";
-  @override
-  String app_cancel = "cancel";
-  @override
-  String app_empty = "Empty(oﾟ▽ﾟ)o";
-  @override
-  String app_licenses = "licenses";
-  @override
-  String app_close = "close";
-  @override
-  String app_version = "version";
-  @override
-  String app_back_tip = "Exit？";
+    @override
+    String appName = "MT.IK.SUNYARA";
 
-  @override
-  String app_not_new_version = "No new version.";
-  @override
-  String app_version_title = "Update Version";
+    @override
+    String appOk = "ok";
 
-  @override
-  String nothing_now = "Nothing";
-  @override
-  String loading_text = "Loading···";
+    @override
+    String appCancel = "cancel";
 
-  @override
-  String option_web = "browser";
-  @override
-  String option_copy = "copy";
-  @override
-  String option_share = "share";
-  @override
-  String option_web_launcher_error = "url error";
-  @override
-  String option_share_title = "share form GSYGitHubFlutter： ";
-  @override
-  String option_share_copy_success = "Copy Success";
+    @override
+    String appEmpty = "Empty(oﾟ▽ﾟ)o";
 
-  @override
-  String login_text = "Login";
+    @override
+    String appLicenses = "licenses";
 
-  @override
-  String login_loading_text = "Desperately logged in···";
+    @override
+    String appClose = "close";
 
-  @override
-  String Login_out = "Logout";
+    @override
+    String appVersion = "version";
 
-  @override
-  String home_reply = "Feedback";
-  @override
-  String home_change_language = "Language";
-  @override
-  String home_about = "About";
-  @override
-  String home_check_update = "CheckUpdate";
-  @override
-  String home_history = "History";
-  @override
-  String home_user_info = "Profile";
-  @override
-  String home_change_theme = "Theme";
-  @override
-  String home_language_default= "Default";
-  @override
-  String home_language_zh= "Chinese";
-  @override
-  String home_language_en= "English";
+    @override
+    String appBackTip = "Exit？";
 
-  @override
-  String home_theme_default = "Default";
-  @override
-  String home_theme_1 = "Theme1";
-  @override
-  String home_theme_2 = "Theme2";
-  @override
-  String home_theme_3 = "Theme3";
-  @override
-  String home_theme_4 = "Theme4";
-  @override
-  String home_theme_5 = "Theme5";
-  @override
-  String home_theme_6 = "Theme6";
+    @override
+    String appNotNewVersion = "No new version.";
 
-  @override
-  String login_username_hint_text = "username";
-  @override
-  String login_password_hint_text = "password";
-  @override
-  String login_success = "Login Success";
+    @override
+    String appVersionTitle = "Update Version";
 
-  @override
-  String network_error_401 = "Http 401";
-  @override
-  String network_error_403 = "Http 403";
-  @override
-  String network_error_404 = "Http 404";
-  @override
-  String network_error_timeout = "Http timeout";
-  @override
-  String network_error_unknown = "Http unknown error";
-  @override
-  String network_error = "network error";
+    @override
+    String nothingNow = "Nothing";
 
-  @override
-  String load_more_not = "nothing";
-  @override
-  String load_more_text = "loading";
+    @override
+    String loadingText = "Loading···";
 
-  @override
-  String home_dynamic = "Dynamic";
-  @override
-  String home_trend = "Trend";
-  @override
-  String home_my = "My";
+    @override
+    String optionWeb = "browser";
 
-  @override
-  String trend_day = 'today';
-  @override
-  String trend_week = 'week';
-  @override
-  String trend_month = 'month';
-  @override
-  String trend_all = 'all';
+    @override
+    String optionCopy = "copy";
 
-  @override
-  String user_tab_repos = "repos";
-  @override
-  String user_tab_fans = "fan";
-  @override
-  String user_tab_focus = "focus";
-  @override
-  String user_tab_star = "star";
-  @override
-  String user_tab_honor = "honor";
-  @override
-  String user_dynamic_group = "Members;";
-  @override
-  String user_dynamic_title = "Dynamic";
-  @override
-  String user_focus = "Focused";
-  @override
-  String user_un_focus = "Focus";
-  @override
-  String user_focus_no_support = "Not Support。";
-  @override
-  String user_create_at = "Create at：";
-  @override
-  String user_orgs_title = "organization";
+    @override
+    String optionShare = "share";
 
-  @override
-  String repos_tab_readme = "readme";
-  @override
-  String repos_tab_info = "info";
-  @override
-  String repos_tab_file = "file";
-  @override
-  String repos_tab_issue = "issue";
-  @override
-  String repos_tab_activity = "activity";
-  @override
-  String repos_tab_commits = "commits";
-  @override
-  String repos_tab_issue_all = "all";
-  @override
-  String repos_tab_issue_open = "open";
-  @override
-  String repos_tab_issue_closed = "close";
-  @override
-  String repos_option_release = "release";
-  @override
-  String repos_option_branch = "branch";
-  @override
-  String repos_fork_at = "Fork at ";
-  @override
-  String repos_create_at = "create at ";
-  @override
-  String repos_last_commit = "last commit at ";
-  @override
-  String repos_all_issue_count = "all Issue：";
-  @override
-  String repos_open_issue_count = "open Issue：";
-  @override
-  String repos_close_issue_count = "close Issue：";
+    @override
+    String optionWebLauncherError = "url error";
 
-  @override
-  String repos_issue_search = "Search";
+    @override
+    String optionShareTitle = "share form GSYGitHubFlutter： ";
 
-  @override
-  String issue_reply = "reply";
-  @override
-  String issue_edit = "edit";
-  @override
-  String issue_open = "open";
-  @override
-  String issue_close = "close";
-  @override
-  String issue_lock = "lock";
-  @override
-  String issue_unlock = "unlock";
-  @override
-  String issue_reply_issue = "reply Issue";
-  @override
-  String issue_commit_issue = "commit Issue";
-  @override
-  String issue_edit_issue = "edit issue";
-  @override
-  String issue_edit_issue_commit = "edit reply";
-  @override
-  String issue_edit_issue_edit_commit = "Edit";
-  @override
-  String issue_edit_issue_delete_commit = "Delete";
-  @override
-  String issue_edit_issue_copy_commit = "Copy";
-  @override
-  String issue_edit_issue_content_not_be_null = "Could't not be empty";
-  @override
-  String issue_edit_issue_title_not_be_null = "Could't not be empty";
-  @override
-  String issue_edit_issue_title_tip = "please input title";
-  @override
-  String issue_edit_issue_content_tip = "please input content";
+    @override
+    String optionShareCopySuccess = "Copy Success";
 
-  @override
-  String notify_title = "Notify";
-  @override
-  String notify_tab_all = "all";
-  @override
-  String notify_tab_part = "part";
-  @override
-  String notify_tab_unread = "unread";
-  @override
-  String notify_unread = "unread";
-  @override
-  String notify_readed = "read";
-  @override
-  String notify_status = "status";
-  @override
-  String notify_type = "type";
+    @override
+    String loginText = "Login";
 
-  @override
-  String search_title = "Search";
-  @override
-  String search_tab_repos = "Repos";
-  @override
-  String search_tab_user = "User";
+    @override
+    String loginLoadingText = "Desperately logged in···";
 
-  @override
-  String release_tab_release = "Release";
-  @override
-  String release_tab_tag = "Tag";
+    @override
+    String loginOut = "Logout";
 
-  @override
-  String user_profile_name = "name";
-  @override
-  String user_profile_email = "email";
-  @override
-  String user_profile_link = "link";
-  @override
-  String user_profile_org = "company";
-  @override
-  String user_profile_location = "location";
-  @override
-  String user_profile_info = "info";
+    @override
+    String homeReply = "Feedback";
 
-  @override
-  String search_type = "type";
-  @override
-  String search_sort = "sort";
-  @override
-  String search_language = "language";
+    @override
+    String homeChangeLanguage = "Language";
+
+    @override
+    String homeAbout = "About";
+
+    @override
+    String homeCheckUpdate = "CheckUpdate";
+
+    @override
+    String homeHistory = "History";
+
+    @override
+    String homeUserInfo = "Profile";
+
+    @override
+    String homeChangeTheme = "Theme";
+
+    @override
+    String homeLanguageDefault= "Default";
+
+    @override
+    String homeLanguageZh= "Chinese";
+
+    @override
+    String homeLanguageEn= "English";
+
+    @override
+    String homeThemeDefault = "Default";
+
+    @override
+    String homeTheme_1 = "Theme1";
+
+    @override
+    String homeTheme_2 = "Theme2";
+
+    @override
+    String homeTheme_3 = "Theme3";
+
+    @override
+    String homeTheme_4 = "Theme4";
+
+    @override
+    String homeTheme_5 = "Theme5";
+
+    @override
+    String homeTheme_6 = "Theme6";
+
+    @override
+    String loginUsernameHintText = "username";
+
+    @override
+    String loginPasswordHintText = "password";
+
+    @override
+    String loginSuccess = "Login Success";
+
+    @override
+    String networkError_401 = "Http 401";
+
+    @override
+    String networkError_403 = "Http 403";
+
+    @override
+    String networkError_404 = "Http 404";
+
+    @override
+    String networkErrorTimeout = "Http timeout";
+
+    @override
+    String networkErrorUnknown = "Http unknown error";
+
+    @override
+    String networkError = "network error";
+
+    @override
+    String loadMoreNot = "nothing";
+
+    @override
+    String loadMoreText = "loading";
+
+    @override
+    String homeDynamic = "Dynamic";
+
+    @override
+    String homeTrend = "Trend";
+
+    @override
+    String homeMine = "Mine";
+
+    @override
+    String trendDay = 'today';
+
+    @override
+    String trendWeek = 'week';
+
+    @override
+    String trendMonth = 'month';
+
+    @override
+    String trendAll = 'all';
+
+    @override
+    String userTabRepos = "repos";
+
+    @override
+    String userTabFans = "fan";
+
+    @override
+    String userTabFocus = "focus";
+
+    @override
+    String userTabStar = "star";
+
+    @override
+    String userTabHonor = "honor";
+    
+    @override
+    String userDynamicGroup = "Members;";
+    
+    @override
+    String userDynamicTitle = "Dynamic";
+    
+    @override
+    String userFocus = "Focused";
+    
+    @override
+    String userUnFocus = "Focus";
+    
+    @override
+    String userFocusNoSupport = "Not Support。";
+    
+    @override
+    String userCreateAt = "Create at：";
+    
+    @override
+    String userOrgsTitle = "organization";
+
+    @override
+    String reposTabReadme = "readme";
+
+    @override
+    String reposTabInfo = "info";
+
+    @override
+    String reposTabFile = "file";
+
+    @override
+    String reposTabIssue = "issue";
+
+    @override
+    String reposTabActivity = "activity";
+
+    @override
+    String reposTabCommits = "commits";
+
+    @override
+    String reposTabIssueAll = "all";
+
+    @override
+    String reposTabIssueOpen = "open";
+
+    @override
+    String reposTabIssueClosed = "close";
+
+    @override
+    String reposOptionRelease = "release";
+
+    @override
+    String reposOptionBranch = "branch";
+
+    @override
+    String reposForkAt = "Fork at ";
+
+    @override
+    String reposCreateAt = "create at ";
+
+    @override
+    String reposLastCommit = "last commit at ";
+
+    @override
+    String reposAllIssueCount = "all Issue：";
+
+    @override
+    String reposOpenIssueCount = "open Issue：";
+
+    @override
+    String reposCloseIssueCount = "close Issue：";
+
+    @override
+    String reposIssueSearch = "Search";
+
+    @override
+    String issueReply = "reply";
+
+    @override
+    String issueEdit = "edit";
+
+    @override
+    String issueOpen = "open";
+
+    @override
+    String issueClose = "close";
+
+    @override
+    String issueLock = "lock";
+
+    @override
+    String issueUnlock = "unlock";
+
+    @override
+    String issueReplyIssue = "reply Issue";
+
+    @override
+    String issueCommitIssue = "commit Issue";
+
+    @override
+    String issueEditIssue = "edit issue";
+
+    @override
+    String issueEditIssueCommit = "edit reply";
+
+    @override
+    String issueEditIssueEditCommit = "Edit";
+
+    @override
+    String issueEditIssueDeleteCommit = "Delete";
+
+    @override
+    String issueEditIssueCopyCommit = "Copy";
+
+    @override
+    String issueEditIssueContentNotBeNull = "Could't not be empty";
+
+    @override
+    String issueEditIssueTitleNotBeNull = "Could't not be empty";
+
+    @override
+    String issueEditIssueTitleTip = "please input title";
+
+    @override
+    String issueEditIssueContentTip = "please input content";
+
+    @override
+    String notifyTitle = "Notify";
+
+    @override
+    String notifyTabAll = "all";
+
+    @override
+    String notifyTabPart = "part";
+
+    @override
+    String notifyTabUnread = "unread";
+
+    @override
+    String notifyUnread = "unread";
+
+    @override
+    String notifyReaded = "read";
+
+    @override
+    String notifyStatus = "status";
+
+    @override
+    String notifyType = "type";
+
+    @override
+    String searchTitle = "Search";
+
+    @override
+    String searchTabRepos = "Repos";
+
+    @override
+    String searchTabUser = "User";
+
+    @override
+    String releaseTabRelease = "Release";
+
+    @override
+    String releaseTabTag = "Tag";
+
+    @override
+    String userProfileName = "name";
+
+    @override
+    String userProfileEmail = "email";
+    
+    @override
+    String userProfileLink = "link";
+    
+    @override
+    String userProfileOrg = "company";
+    
+    @override
+    String userProfileLocation = "location";
+    
+    @override
+    String userProfileInfo = "info";
+
+    @override
+    String searchType = "type";
+    
+    @override
+    String searchSort = "sort";
+    
+    @override
+    String searchLanguage = "language";
 }

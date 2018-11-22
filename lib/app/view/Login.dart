@@ -66,7 +66,7 @@ class _LoginState extends State<Login> {
                                         new Image(image: new AssetImage(MKICons.DEFAULT_USER_ICON), width: 100.0, height: 100.0),
                                         new Padding(padding: new EdgeInsets.all(10.0)),
                                         new MKInput(
-                                            hintText: CommonUtils.getLocale(context).login_username_hint_text,
+                                            hintText: CommonUtils.getLocale(context).loginUsernameHintText,
                                             iconData: MKICons.LOGIN_USER,
                                             onChanged: (String value) {
                                                 _userName = value;
@@ -75,7 +75,7 @@ class _LoginState extends State<Login> {
                                         ),
                                         new Padding(padding: new EdgeInsets.all(10.0)),
                                         new MKInput(
-                                            hintText: CommonUtils.getLocale(context).login_password_hint_text,
+                                            hintText: CommonUtils.getLocale(context).loginPasswordHintText,
                                             iconData: MKICons.LOGIN_PW,
                                             obscureText: true,
                                             onChanged: (String value) {
@@ -85,7 +85,7 @@ class _LoginState extends State<Login> {
                                         ),
                                         new Padding(padding: new EdgeInsets.all(30.0)),
                                         new MKFlexButton(
-                                            text: CommonUtils.getLocale(context).login_text,
+                                            text: CommonUtils.getLocale(context).loginText,
                                             color: Theme.of(context).primaryColor,
                                             textColor: Color(MKColors.textWhite),
                                             onPress: () {
@@ -95,7 +95,7 @@ class _LoginState extends State<Login> {
                                                 if (_passWord == null || _passWord.length == 0) {
                                                     return;
                                                 }
-                                                CommonUtils.showLoadingDialog(context, CommonUtils.getLocale(context).login_loading_text);
+                                                CommonUtils.showLoadingDialog(context, CommonUtils.getLocale(context).loginLoadingText);
                                                 UserService.login(_userName.trim(), _passWord.trim(), store).then((res) {
                                                     if (res != null && res.result) {
                                                         new Future.delayed(const Duration(microseconds: 666), () {

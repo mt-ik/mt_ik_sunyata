@@ -1,225 +1,254 @@
 
 abstract class MKBase {
   
-  String welcomeMessage;
+    String welcomeMessage;
 
-  String app_name;
+    String appName;
 
-  String app_ok;
+    String appOk;
 
-  String app_cancel;
+    String appCancel;
 
-  String app_empty;
-  String app_licenses;
-  String app_close;
+    String appEmpty;
 
-  String app_version;
+    String appLicenses;
+    
+    String appClose;
 
-  String app_back_tip;
+    String appVersion;
 
-  String app_not_new_version;
-  String app_version_title;
+    String appBackTip;
 
-  String nothing_now;
+    String appNotNewVersion;
 
-  String loading_text;
+    String appVersionTitle;
 
-  String option_web;
+    String nothingNow;
 
-  String option_copy;
+    String loadingText;
 
-  String option_share;
+    String optionWeb;
 
-  String option_web_launcher_error;
+    String optionCopy;
 
-  String option_share_title;
-  String option_share_copy_success;
+    String optionShare;
 
-  String login_text;
+    String optionWebLauncherError;
 
-  String login_loading_text;
+    String optionShareTitle;
 
-  String Login_out;
+    String optionShareCopySuccess;
 
-  String home_reply;
+    String loginText;
 
-  String home_change_language;
+    String loginLoadingText;
 
-  String home_about;
+    String loginOut;
 
-  String home_check_update;
+    String homeReply;
 
-  String home_history;
+    String homeChangeLanguage;
 
-  String home_user_info;
+    String homeAbout;
 
-  String home_change_theme;
+    String homeCheckUpdate;
 
-  String home_language_default;
-  String home_language_zh;
-  String home_language_en;
+    String homeHistory;
 
-  String home_theme_default;
+    String homeUserInfo;
 
-  String home_theme_1;
+    String homeChangeTheme;
 
-  String home_theme_2;
+    String homeLanguageDefault;
 
-  String home_theme_3;
+    String homeLanguageZh;
 
-  String home_theme_4;
+    String homeLanguageEn;
 
-  String home_theme_5;
+    String homeThemeDefault;
 
-  String home_theme_6;
+    String homeTheme_1;
 
-  String login_username_hint_text;
+    String homeTheme_2;
 
-  String login_password_hint_text;
+    String homeTheme_3;
 
-  String login_success;
+    String homeTheme_4;
 
-  String network_error_401;
-  String network_error_403;
+    String homeTheme_5;
 
-  String network_error_404;
+    String homeTheme_6;
 
-  String network_error_timeout;
+    String loginUsernameHintText;
 
-  String network_error_unknown;
+    String loginPasswordHintText;
 
-  String network_error;
+    String loginSuccess;
 
-  String load_more_not;
+    String networkError_401;
 
-  String load_more_text;
+    String networkError_403;
 
-  String home_dynamic;
+    String networkError_404;
 
-  String home_trend;
-  String home_my;
+    String networkErrorTimeout;
 
-  String trend_day;
+    String networkErrorUnknown;
 
-  String trend_week;
+    String networkError;
 
-  String trend_month;
+    String loadMoreNot;
 
-  String trend_all;
+    String loadMoreText;
 
-  String user_tab_repos;
+    String homeDynamic;
 
-  String user_tab_fans;
+    String homeTrend;
 
-  String user_tab_focus;
+    String homeMine;
 
-  String user_tab_star;
+    String trendDay;
 
-  String user_tab_honor;
-  String user_dynamic_group;
+    String trendWeek;
 
-  String user_dynamic_title;
+    String trendMonth;
 
-  String user_focus;
-  String user_un_focus;
+    String trendAll;
 
-  String user_focus_no_support;
-  String user_create_at;
-  String user_orgs_title;
+    String userTabRepos;
 
-  String repos_tab_readme;
+    String userTabFans;
 
-  String repos_tab_info;
+    String userTabFocus;
 
-  String repos_tab_file;
+    String userTabStar;
 
-  String repos_tab_issue;
+    String userTabHonor;
 
-  String repos_tab_activity;
-  String repos_tab_commits;
-  String repos_tab_issue_all;
-  String repos_tab_issue_open;
-  String repos_tab_issue_closed;
-  String repos_option_release;
-  String repos_option_branch;
+    String userDynamicGroup;
 
-  String repos_fork_at;
-  String repos_create_at;
+    String userDynamicTitle;
 
-  String repos_last_commit;
+    String userFocus;
 
-  String repos_all_issue_count;
+    String userUnFocus;
 
-  String repos_open_issue_count;
-  String repos_close_issue_count;
+    String userFocusNoSupport;
 
-  String repos_issue_search;
+    String userCreateAt;
 
-  String issue_reply;
+    String userOrgsTitle;
 
-  String issue_edit;
+    String reposTabReadme;
 
-  String issue_open;
+    String reposTabInfo;
 
-  String issue_close;
+    String reposTabFile;
 
-  String issue_lock;
-  String issue_unlock;
+    String reposTabIssue;
 
-  String issue_reply_issue;
+    String reposTabActivity;
 
-  String issue_commit_issue;
+    String reposTabCommits;
 
-  String issue_edit_issue;
+    String reposTabIssueAll;
 
-  String issue_edit_issue_commit;
-  String issue_edit_issue_edit_commit;
+    String reposTabIssueOpen;
 
-  String issue_edit_issue_delete_commit;
+    String reposTabIssueClosed;
 
-  String issue_edit_issue_copy_commit;
-  String issue_edit_issue_content_not_be_null;
+    String reposOptionRelease;
 
-  String issue_edit_issue_title_not_be_null;
+    String reposOptionBranch;
 
-  String issue_edit_issue_title_tip;
+    String reposForkAt;
 
-  String issue_edit_issue_content_tip;
+    String reposCreateAt;
 
-  String notify_title;
-  String notify_tab_all;
+    String reposLastCommit;
 
-  String notify_tab_part;
+    String reposAllIssueCount;
 
-  String notify_tab_unread;
-  String notify_unread;
+    String reposOpenIssueCount;
 
-  String notify_readed;
+    String reposCloseIssueCount;
 
-  String notify_status;
+    String reposIssueSearch;
 
-  String notify_type;
+    String issueReply;
 
-  String search_title;
-  String search_tab_repos;
+    String issueEdit;
 
-  String search_tab_user;
+    String issueOpen;
 
-  String release_tab_release;
+    String issueClose;
 
-  String release_tab_tag;
+    String issueLock;
+    String issueUnlock;
 
-  String user_profile_name;
+    String issueReplyIssue;
 
-  String user_profile_email;
+    String issueCommitIssue;
 
-  String user_profile_link;
+    String issueEditIssue;
 
-  String user_profile_org;
-  String user_profile_location;
-  String user_profile_info;
+    String issueEditIssueCommit;
 
-  String search_type;
-  String search_sort;
-  String search_language;
+    String issueEditIssueEditCommit;
+
+    String issueEditIssueDeleteCommit;
+
+    String issueEditIssueCopyCommit;
+
+    String issueEditIssueContentNotBeNull;
+
+    String issueEditIssueTitleNotBeNull;
+
+    String issueEditIssueTitleTip;
+
+    String issueEditIssueContentTip;
+
+    String notifyTitle;
+
+    String notifyTabAll;
+
+    String notifyTabPart;
+
+    String notifyTabUnread;
+
+    String notifyUnread;
+
+    String notifyReaded;
+
+    String notifyStatus;
+
+    String notifyType;
+
+    String searchTitle;
+
+    String searchTabRepos;
+
+    String searchTabUser;
+
+    String releaseTabRelease;
+
+    String releaseTabTag;
+
+    String userProfileName;
+
+    String userProfileEmail;
+
+    String userProfileLink;
+
+    String userProfileOrg;
+
+    String userProfileLocation;
+
+    String userProfileInfo;
+
+    String searchType;
+
+    String searchSort;
+    
+    String searchLanguage;
 }
