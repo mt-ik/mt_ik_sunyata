@@ -12,7 +12,7 @@ import 'package:mt_ik_sunyata/app/redux/LocaleRedux.dart';
  * 通用逻辑
  */
 class CommonUtils {
-    static Future<Null> showLoadingDialog(BuildContext context) {
+    static Future<Null> showLoadingDialog(BuildContext context, String text) {
     return showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -34,7 +34,7 @@ class CommonUtils {
                   children: <Widget>[
                     new Container(child: SpinKitCubeGrid(color: Color(MKColors.white))),
                     new Container(height: 10.0),
-                    new Container(child: new Text(CommonUtils.getLocale(context).loading_text, style: MKConstant.normalTextWhite)),
+                    new Container(child: new Text(text, style: MKConstant.normalTextWhite)),
                   ],
                 ),
               ),

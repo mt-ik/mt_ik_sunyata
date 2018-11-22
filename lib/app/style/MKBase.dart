@@ -37,6 +37,8 @@ abstract class MKBase {
 
   String login_text;
 
+  String login_loading_text;
+
   String Login_out;
 
   String home_reply;

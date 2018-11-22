@@ -49,6 +49,9 @@ class MKZh extends MKBase {
   String login_text = "登录";
 
   @override
+  String login_loading_text = "正在拼命登录中哦···";
+
+  @override
   String Login_out = "退出登录";
 
   @override
@@ -88,7 +91,7 @@ class MKZh extends MKBase {
   String home_theme_6 = "主题6";
 
   @override
-  String login_username_hint_text = "请输入github用户名";
+  String login_username_hint_text = "请输入用户名";
   @override
   String login_password_hint_text = "请输入密码";
   @override

@@ -49,6 +49,9 @@ class MKEn extends MKBase {
   String login_text = "Login";
 
   @override
+  String login_loading_text = "Desperately logged in···";
+
+  @override
   String Login_out = "Logout";
 
   @override

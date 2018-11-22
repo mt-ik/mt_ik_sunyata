@@ -55,11 +55,8 @@ flutter:
   #  - images/a_dot_ham.jpeg
   assets:
     - assets/girl.jpeg
-    - assets/images/logo.png
-    - assets/images/default_img.png
-    - assets/sunyata/logo.png
-    - assets/sunyata/mt_ik_14.jpeg
-    - assets/sunyata/mt_ik_15.jpeg
+    - assets/images/
+    - assets/sunyata/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
