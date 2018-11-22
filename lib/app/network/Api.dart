@@ -88,7 +88,6 @@ class HttpManager {
 
         try {
             response = await dio.request(url, data: params, options: option);
-            print(response.data.toString());
         } on DioError catch (e) {
 
             Response errorResponse;

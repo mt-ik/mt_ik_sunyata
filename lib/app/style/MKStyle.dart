@@ -218,9 +218,11 @@ class MKICons {
   static const IconData MORE = const IconData(0xe674, fontFamily: MKICons.FONT_FAMILY);
   static const IconData SEARCH = const IconData(0xe61c, fontFamily: MKICons.FONT_FAMILY);
 
-  static const IconData MAIN_DT = const IconData(0xe684, fontFamily: MKICons.FONT_FAMILY);
-  static const IconData MAIN_QS = const IconData(0xe818, fontFamily: MKICons.FONT_FAMILY);
-  static const IconData MAIN_MY = const IconData(0xe6d0, fontFamily: MKICons.FONT_FAMILY);
+  static const IconData MAIN_SUNYATA = const IconData(0xe6b9, fontFamily: MKICons.FONT_FAMILY);
+  static const IconData MAIN_ORIGIN = const IconData(0xe6b8, fontFamily: MKICons.FONT_FAMILY);
+  static const IconData MAIN_SOUL = const IconData(0xe600, fontFamily: MKICons.FONT_FAMILY);
+  static const IconData MAIN_MIXED = const IconData(0xe65b, fontFamily: MKICons.FONT_FAMILY);
+  static const IconData MAIN_MINE = const IconData(0xe502, fontFamily: MKICons.FONT_FAMILY);
   static const IconData MAIN_SEARCH = const IconData(0xe61c, fontFamily: MKICons.FONT_FAMILY);
 
   static const IconData LOGIN_USER = const IconData(0xe666, fontFamily: MKICons.FONT_FAMILY);

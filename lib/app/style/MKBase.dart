@@ -101,11 +101,15 @@ abstract class MKBase {
 
     String loadMoreText;
 
-    String homeDynamic;
+    String mainSunyata;
 
-    String homeTrend;
+    String mainMixed;
 
-    String homeMine;
+    String mainSoul;
+
+    String mainOrigin;
+
+    String mainMine;
 
     String trendDay;
 

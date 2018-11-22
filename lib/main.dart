@@ -1,3 +1,4 @@
+import 'package:flutter/rendering.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mt_ik_sunyata/app/redux/MKState.dart';
@@ -11,6 +12,8 @@ import 'package:mt_ik_sunyata/app/style/MKStyle.dart';
 import 'package:mt_ik_sunyata/app/localization/MKLocalizationsDelegate.dart';
 
 void main() {
+    /// 可视化调试
+    // debugPaintSizeEnabled = true;
     /// app主入口
     runApp(new MTIKSunyata());
     /**

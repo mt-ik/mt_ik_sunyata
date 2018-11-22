@@ -153,13 +153,19 @@ class MKEn extends MKBase {
     String loadMoreText = "loading";
 
     @override
-    String homeDynamic = "Dynamic";
+    String mainSunyata = 'Home';
 
     @override
-    String homeTrend = "Trend";
+    String mainMixed = "Mixed";
 
     @override
-    String homeMine = "Mine";
+    String mainSoul = "Soul";
+
+    @override
+    String mainOrigin = 'Origin';
+
+    @override
+    String mainMine = "Mine";
 
     @override
     String trendDay = 'today';

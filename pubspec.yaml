@@ -86,4 +86,5 @@ flutter:
   fonts:
     - family: wxcIconFont
       fonts:
+        - asset: assets/fontMain/iconfont.ttf
         - asset: assets/font/iconfont.ttf

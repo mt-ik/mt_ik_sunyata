@@ -152,13 +152,19 @@ class MKZh extends MKBase {
     String loadMoreText = "正在加载更多";
 
     @override
-    String homeDynamic = "动态";
+    String mainSunyata = '空相';
 
     @override
-    String homeTrend = "趋势";
+    String mainMixed = "杂之";
 
     @override
-    String homeMine = "我的";
+    String mainSoul = "魂兮";
+
+    @override
+    String mainOrigin = '缘体';
+
+    @override
+    String mainMine = "我执";
 
     @override
     String trendDay = '今日';
