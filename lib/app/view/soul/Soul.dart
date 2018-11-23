@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mt_ik_sunyata/app/utils/MKNavigator.dart';
+import 'package:mt_ik_sunyata/app/view/soul/PurifySoul.dart';
 
 class Soul extends StatefulWidget {
 
@@ -12,19 +14,23 @@ class _SoulState extends State<Soul> {
     Widget build(BuildContext context) {
         return Scaffold(
             appBar: new AppBar(
-                title: new Text('致良知'),
+                title: new Text('···'),
             ),
             body: new Container(
                 child: new Center(
-                    child: new Text('魂兮归来'),
+                    child: new Text('归来'),
                 ),
             ),
             floatingActionButton: new FloatingActionButton(
-                tooltip: 'Add', // used by assistive technologies
+                tooltip: 'Add',
                 child: new Icon(Icons.add),
                 onPressed: () {
-                    print('哈哈， 我执行了');
-                }
+                    Navigator.of(context).push(new MaterialPageRoute(
+                        builder: (context) {
+                          return new PurifySoul();
+                        }
+                    ));
+                },
             ),
         );
     }

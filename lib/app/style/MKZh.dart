@@ -2,7 +2,7 @@ import 'package:mt_ik_sunyata/app/style/MKBase.dart';
 
 class MKZh extends MKBase {
     @override
-    String welcomeMessage = "Welcome To Flutter";
+    String welcomeMessage = "欲学为大人物者，在一生中，不可无数年住世界外之世界；在一年中，不可无数月住世界外之世界；在一日中，不可无数刻住世界外之世界";
 
     @override
     String appName = "MT_IK_SUNYATA";

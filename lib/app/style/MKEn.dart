@@ -3,7 +3,7 @@ import 'package:mt_ik_sunyata/app/style/MKBase.dart';
 class MKEn extends MKBase {
 
     @override
-    String welcomeMessage = "Welcome To Flutter";
+    String welcomeMessage = "Welcome To MK_IK_SUNYATA";
 
     @override
     String appName = "MT.IK.SUNYARA";

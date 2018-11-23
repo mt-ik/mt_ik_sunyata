@@ -6,6 +6,7 @@ import 'package:mt_ik_sunyata/app/style/MKImage.dart';
 import 'package:mt_ik_sunyata/app/redux/MKState.dart';
 import 'package:mt_ik_sunyata/app/utils/MKNavigator.dart';
 import 'package:mt_ik_sunyata/app/service/UserService.dart';
+import 'package:mt_ik_sunyata/app/utils/CommonUtils.dart';
 
 class Welcome extends StatefulWidget {
 
@@ -49,6 +50,9 @@ class _WelcomeState extends State<Welcome> {
             color: Colors.white,
             child: new ConstrainedBox( /// 设置容器
                 child: MKImage.welcomeImage,
+                // child: new Center(
+                //     child: new Text(CommonUtils.getLocale(context).welcomeMessage),
+                // ),
                 constraints: new BoxConstraints.expand(), /// 子元素充满父容器
             )
         );

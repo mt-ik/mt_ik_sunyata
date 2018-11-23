@@ -17,7 +17,7 @@ class _SunyataState extends State<Sunyata> {
             backgroundColor: Theme.of(context).primaryColor,
         ),
         body: new Center(
-            child: new Text('空相111'),
+            child: new Text('111'),
         ),
     );
   }
