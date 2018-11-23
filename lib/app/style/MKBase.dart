@@ -101,13 +101,15 @@ abstract class MKBase {
 
     String loadMoreText;
 
-    String mainSunyata;
+    String mainKarma;
 
     String mainMixed;
 
     String mainSoul;
 
     String mainOrigin;
+
+    String mainSunyata;
 
     String mainMine;
 

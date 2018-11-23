@@ -152,7 +152,7 @@ class MKZh extends MKBase {
     String loadMoreText = "正在加载更多";
 
     @override
-    String mainSunyata = '空相';
+    String mainKarma = '业障';
 
     @override
     String mainMixed = "杂之";
@@ -162,6 +162,9 @@ class MKZh extends MKBase {
 
     @override
     String mainOrigin = '缘体';
+
+    @override
+    String mainSunyata = '空相';
 
     @override
     String mainMine = "我执";

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mt_ik_sunyata/app/utils/CommonUtils.dart';
 import 'package:mt_ik_sunyata/app/style/MKStyle.dart';
 import 'package:mt_ik_sunyata/app/widget/MKTabBar.dart';
+import 'package:mt_ik_sunyata/app/view/karma/Karma.dart';
+import 'package:mt_ik_sunyata/app/view/origin/Origin.dart';
+import 'package:mt_ik_sunyata/app/view/soul/Soul.dart';
+import 'package:mt_ik_sunyata/app/view/mixed/Mixed.dart';
 import 'package:mt_ik_sunyata/app/view/sunyata/Sunyata.dart';
 
 class Home extends StatelessWidget {
@@ -42,11 +46,11 @@ class Home extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
         List<Widget> tabs = [
-            _renderTab(MKICons.MAIN_SUNYATA, CommonUtils.getLocale(context).mainSunyata),
+            _renderTab(MKICons.MAIN_KARMA, CommonUtils.getLocale(context).mainKarma),
             _renderTab(MKICons.MAIN_ORIGIN, CommonUtils.getLocale(context).mainOrigin),
             _renderTab(MKICons.MAIN_SOUL, CommonUtils.getLocale(context).mainSoul),
             _renderTab(MKICons.MAIN_MIXED, CommonUtils.getLocale(context).mainMixed),
-            _renderTab(MKICons.MAIN_MINE, CommonUtils.getLocale(context).mainMine),
+            _renderTab(MKICons.MAIN_SUNYATA, CommonUtils.getLocale(context).mainSunyata),
         ];
         return WillPopScope(
             onWillPop: () {
@@ -57,29 +61,15 @@ class Home extends StatelessWidget {
                 type: MKTabBar.BOTTOM_TAB,
                 tabItems: tabs,
                 tabViews: <Widget>[
+                    new Karma(),
+                    new Origin(),
+                    new Soul(),
+                    new Mixed(),
                     new Sunyata(),
-                    new Center(
-                        child: new Text('杂之'),
-                    ),
-                    new Center(
-                        child: new Text(
-                            '魂兮归来',
-                            style: TextStyle(
-                                fontSize: 32.0
-                            )
-                        ),
-                        
-                    ),
-                    new Center(
-                        child: new Text('缘体'),
-                    ),
-                    new Center(
-                        child: new Text('我执'),
-                    ),
                 ],
                 backgroundColor: MKColors.primarySwatch,
                 indicatorColor: Color(MKColors.white),
-                title: new Text('测试'),
+                // title: new Text('测试'),
             ),
         );
     }

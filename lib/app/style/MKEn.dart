@@ -153,7 +153,7 @@ class MKEn extends MKBase {
     String loadMoreText = "loading";
 
     @override
-    String mainSunyata = 'Home';
+    String mainKarma = "Karma";
 
     @override
     String mainMixed = "Mixed";
@@ -163,6 +163,9 @@ class MKEn extends MKBase {
 
     @override
     String mainOrigin = 'Origin';
+
+    @override
+    String mainSunyata = 'Sunyata';
 
     @override
     String mainMine = "Mine";
