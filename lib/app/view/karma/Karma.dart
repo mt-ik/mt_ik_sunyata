@@ -15,9 +15,25 @@ class _KarmaState extends State<Karma> {
                 title: new Text(
                     '业障'
                 ),
+                actions: <Widget>[
+                    new IconButton(
+                        icon: new Icon(Icons.search),
+                        tooltip: 'Search',
+                        onPressed: () {
+                        print('我是Searching');
+                        },
+                    ),
+                ],
             ),
             body: new Container(
                 child: new Text('111111'),
+            ),
+            floatingActionButton: new FloatingActionButton(
+                tooltip: 'Add', // used by assistive technologies
+                child: new Icon(Icons.add),
+                onPressed: () {
+                    print('哈哈， 我执行了');
+                }
             ),
         );
     }

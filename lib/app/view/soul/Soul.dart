@@ -19,6 +19,13 @@ class _SoulState extends State<Soul> {
                     child: new Text('魂兮归来'),
                 ),
             ),
+            floatingActionButton: new FloatingActionButton(
+                tooltip: 'Add', // used by assistive technologies
+                child: new Icon(Icons.add),
+                onPressed: () {
+                    print('哈哈， 我执行了');
+                }
+            ),
         );
     }
 }
