@@ -15,21 +15,14 @@ class _PurifySoulState extends State<PurifySoul> {
 
     void handleTextChanged(String newText) {
         setState(() {
-            print(_text);
-            print(newText);
             _text = newText;          
         });
     }
 
     @override
-    void initState() {
-        super.initState();
-    }
-
-    @override
     void dispose() {
         super.dispose();
-      }
+    }
 
     @override
     Widget build(BuildContext context) {
@@ -50,19 +43,15 @@ class _PurifySoulState extends State<PurifySoul> {
                             icon: Icon(MKICons.SOUL_SEND),
                             tooltip: 'send',
                             onPressed: () {
-                                print(_text);
-                                Navigator.of(context).pop();
+                                print(_text + '===========');
+                                // Navigator.of(context).pop();
                             },
                         ),
                     ],
                 ),
-                body: new Center(
-                    child: new Container(
-                        child: new TextInput(
-                            text: _text,
-                            onChanged: handleTextChanged,
-                        ),
-                    ),
+                body: new TextInput(
+                    text: _text,
+                    onChanged: handleTextChanged,
                 ),
             ),
         );
@@ -76,10 +65,6 @@ class TextInput extends StatefulWidget {
     final String text;
 
     final ValueChanged<String> onChanged;
-
-    void ininState() {
-        print(this.onChanged);
-    }
 
     @override
     _TextInputState createState() => new _TextInputState(text: text, onChanged: onChanged);
@@ -97,46 +82,42 @@ class _TextInputState extends State<TextInput> {
     final TextEditingController controller = new TextEditingController();
    
     @override
-    void initState() {
-        print(text);
-        print(onChanged);
-        super.initState();
-    }
-    @override
     Widget build(BuildContext context) {
         return new Container(
             child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                    new TextField(
-                        controller: controller,
-                        // decoration: new InputDecoration(
-                        //     hintText: 'Type something',
-                        // ),
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                            contentPadding: EdgeInsets.all(10.0),
-                            icon: Icon(Icons.text_fields),
-                            labelText: '请输入你的姓名)',
-                            helperText: '请输入你的真实姓名',
+                    new Container(
+                        color: Colors.white,
+                        child: new TextField(
+                            controller: controller,
+                            keyboardType: TextInputType.multiline,
+                            decoration: InputDecoration(
+                              // contentPadding: EdgeInsets.all(10.0),
+                                hintText: '请开启灵魂对话',
+                            ),
+                            maxLines: null,
+                            onChanged: onChanged,
                         ),
-                        maxLines: 5,
-                        maxLength: 20,
                     ),
-                    new RaisedButton(
-                        onPressed: () {
-                            // showDialog(
-                            //     context: context,
-                            //     child: new AlertDialog(
-                            //         title: new Text('What you typed'),
-                            //         content: new Text(controller.text),
-                            //     ),
-                            // );
-                            text = controller.text;
-                            print(onChanged.toString());
-                            onChanged(text);
-                        },
-                        child: new Text('DONE'),
+                    new Container(
+                        child: new Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: <Widget>[
+                               new FlatButton(
+                                  child: new Text('录音'),
+                                  onPressed: () {
+
+                                  },
+                               ),
+                               new RaisedButton(
+                                  child: new Text('录像'),
+                                  onPressed: () {
+
+                                  },
+                               )
+                            ],
+                        )
                     ),
                 ],
             ),
