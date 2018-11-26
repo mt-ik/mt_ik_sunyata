@@ -218,16 +218,23 @@ class MKICons {
     static const IconData MORE = const IconData(0xe674, fontFamily: MKICons.FONT_FAMILY);
     static const IconData SEARCH = const IconData(0xe61c, fontFamily: MKICons.FONT_FAMILY);
 
-    static const IconData MAIN_KARMA = const IconData(0xe6b9, fontFamily: MKICons.FONT_FAMILY);
+    static const IconData MAIN_KARMA = const IconData(0xe653, fontFamily: MKICons.FONT_FAMILY);
     static const IconData MAIN_ORIGIN = const IconData(0xe6b8, fontFamily: MKICons.FONT_FAMILY);
     static const IconData MAIN_SOUL = const IconData(0xe600, fontFamily: MKICons.FONT_FAMILY);
-    static const IconData MAIN_MIXED = const IconData(0xe65b, fontFamily: MKICons.FONT_FAMILY);
+    static const IconData MAIN_MIXED = const IconData(0xe618, fontFamily: MKICons.FONT_FAMILY);
     static const IconData MAIN_SUNYATA = const IconData(0xe502, fontFamily: MKICons.FONT_FAMILY);
     static const IconData MAIN_MINE = const IconData(0xe502, fontFamily: MKICons.FONT_FAMILY);
     static const IconData MAIN_SEARCH = const IconData(0xe61c, fontFamily: MKICons.FONT_FAMILY);
 
-    static const IconData LOGIN_USER = const IconData(0xe666, fontFamily: MKICons.FONT_FAMILY);
-    static const IconData LOGIN_PW = const IconData(0xe60e, fontFamily: MKICons.FONT_FAMILY);
+    static const IconData KARMA_SEARCH = const IconData(0xe60d, fontFamily: MKICons.FONT_FAMILY);
+
+    static const IconData SOUL_EDIT = const IconData(0xe677, fontFamily: MKICons.FONT_FAMILY);
+    static const IconData SOUL_SEND = const IconData(0xe64e, fontFamily: MKICons.FONT_FAMILY);
+    static const IconData SOUL_SEARCH = const IconData(0xe60d, fontFamily: MKICons.FONT_FAMILY);
+
+
+    static const IconData LOGIN_EMAIL = const IconData(0xe675, fontFamily: MKICons.FONT_FAMILY);
+    static const IconData LOGIN_PW = const IconData(0xe63f, fontFamily: MKICons.FONT_FAMILY);
 
     static const IconData REPOS_ITEM_USER = const IconData(0xe63e, fontFamily: MKICons.FONT_FAMILY);
     static const IconData REPOS_ITEM_STAR = const IconData(0xe643, fontFamily: MKICons.FONT_FAMILY);

@@ -170,6 +170,12 @@ class MKZh extends MKBase {
     String mainMine = "我执";
 
     @override
+    String soulTitle = "致良知";
+
+    @override
+    String soulPurifyTitle = "净化";
+
+    @override
     String trendDay = '今日';
 
     @override

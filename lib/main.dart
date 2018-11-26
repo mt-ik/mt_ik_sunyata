@@ -35,7 +35,7 @@ class MTIKSunyata extends StatelessWidget {
                 primarySwatch: MKColors.primarySwatch,
                 platform: TargetPlatform.iOS ///滑动返回
             ),
-            locale: Locale('en', 'US'),
+            locale: Locale('zh', 'CH'),
         )
     );
 

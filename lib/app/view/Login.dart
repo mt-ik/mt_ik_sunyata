@@ -66,7 +66,7 @@ class _LoginState extends State<Login> {
                                         new Padding(padding: new EdgeInsets.all(10.0)),
                                         new MKInput(
                                             hintText: CommonUtils.getLocale(context).loginUsernameHintText,
-                                            iconData: MKICons.LOGIN_USER,
+                                            iconData: MKICons.LOGIN_EMAIL,
                                             onChanged: (String value) {
                                                 _userName = value;
                                             },

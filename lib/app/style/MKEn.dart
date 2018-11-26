@@ -171,6 +171,12 @@ class MKEn extends MKBase {
     String mainMine = "Mine";
 
     @override
+    String soulTitle = "Soul Principle";
+
+    @override
+    String soulPurifyTitle = "Purify";
+
+    @override
     String trendDay = 'today';
 
     @override

@@ -113,6 +113,10 @@ abstract class MKBase {
 
     String mainMine;
 
+    String soulTitle;
+
+    String soulPurifyTitle;
+
     String trendDay;
 
     String trendWeek;

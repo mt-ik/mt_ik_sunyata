@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/animation.dart';
+import 'package:mt_ik_sunyata/app/style/MKStyle.dart';
+import 'package:mt_ik_sunyata/app/utils/CommonUtils.dart';
 
 class PurifySoul extends StatefulWidget {
     static const String MK_ROUTER = 'purifySoul';
@@ -8,54 +9,25 @@ class PurifySoul extends StatefulWidget {
     _PurifySoulState createState() => _PurifySoulState();
 }
 
-class AnimatedLogo extends AnimatedWidget {
+class _PurifySoulState extends State<PurifySoul> {
     
-    AnimatedLogo({ Key key, Animation<double> animation }) : super( key: key, listenable: animation);
+    String _text = '111';
 
-    Widget build(BuildContext contex) {
-        final Animation<double> animation = listenable;
-        return new Center(
-            child: new Container(
-                margin: new EdgeInsets.symmetric(vertical: 10.0),
-                height: animation.value,
-                width: animation.value,
-                child: new FlutterLogo(),
-            ),
-        );
+    void handleTextChanged(String newText) {
+        setState(() {
+            print(_text);
+            print(newText);
+            _text = newText;          
+        });
     }
-}
-
-class _PurifySoulState extends State<PurifySoul> with SingleTickerProviderStateMixin {
-    
-    Animation<double> animation;
-    AnimationController controller;
 
     @override
     void initState() {
-        controller = new AnimationController(
-            duration: const Duration(milliseconds: 3000),
-            vsync: this
-        );
-        animation = new Tween(begin: 0.0, end: 300.0).animate(controller);
-        animation.addStatusListener((status) {
-            if (status == AnimationStatus.completed) {
-                controller.reverse();
-            } else if (status == AnimationStatus.dismissed) {
-                controller.forward();
-            }
-        });
-        // ..addListener(() {
-        //     setState(() {
-
-        //     });
-        // });
-        controller.forward();
         super.initState();
     }
 
     @override
     void dispose() {
-        controller.dispose();
         super.dispose();
       }
 
@@ -64,17 +36,109 @@ class _PurifySoulState extends State<PurifySoul> with SingleTickerProviderStateM
         return new Material(
             child: new Scaffold(
                 appBar: new AppBar(
-                    title: new Text('测试'),
+                    title: new Text(CommonUtils.getLocale(context).soulPurifyTitle),
+                    centerTitle: false, // 标题居中: 默认true
+                    leading: new IconButton(
+                        icon: new Icon(Icons.close),
+                        tooltip: 'close',
+                        onPressed: () {
+                            Navigator.of(context).pop();
+                        },
+                    ),
+                    actions: <Widget>[
+                        IconButton(
+                            icon: Icon(MKICons.SOUL_SEND),
+                            tooltip: 'send',
+                            onPressed: () {
+                                print(_text);
+                                Navigator.of(context).pop();
+                            },
+                        ),
+                    ],
                 ),
                 body: new Center(
                     child: new Container(
-                        // margin: EdgeInsets.symmetric(vertical: 10.0),
-                        // height: animation.value,
-                        // width: animation.value,
-                        // child: new AnimatedLogo(animation: animation),
-                        child: new AnimatedLogo(animation: animation),
+                        child: new TextInput(
+                            text: _text,
+                            onChanged: handleTextChanged,
+                        ),
                     ),
                 ),
+            ),
+        );
+    }
+}
+
+class TextInput extends StatefulWidget {
+    TextInput({Key key,  this.text: '', this.onChanged}) : super(key:key);
+
+
+    final String text;
+
+    final ValueChanged<String> onChanged;
+
+    void ininState() {
+        print(this.onChanged);
+    }
+
+    @override
+    _TextInputState createState() => new _TextInputState(text: text, onChanged: onChanged);
+}
+
+class _TextInputState extends State<TextInput> {
+
+    @override
+    _TextInputState({Key key, this.text: '', this.onChanged}) : super();
+
+    String text;
+
+    final ValueChanged<String> onChanged;
+
+    final TextEditingController controller = new TextEditingController();
+   
+    @override
+    void initState() {
+        print(text);
+        print(onChanged);
+        super.initState();
+    }
+    @override
+    Widget build(BuildContext context) {
+        return new Container(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                    new TextField(
+                        controller: controller,
+                        // decoration: new InputDecoration(
+                        //     hintText: 'Type something',
+                        // ),
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                            contentPadding: EdgeInsets.all(10.0),
+                            icon: Icon(Icons.text_fields),
+                            labelText: '请输入你的姓名)',
+                            helperText: '请输入你的真实姓名',
+                        ),
+                        maxLines: 5,
+                        maxLength: 20,
+                    ),
+                    new RaisedButton(
+                        onPressed: () {
+                            // showDialog(
+                            //     context: context,
+                            //     child: new AlertDialog(
+                            //         title: new Text('What you typed'),
+                            //         content: new Text(controller.text),
+                            //     ),
+                            // );
+                            text = controller.text;
+                            print(onChanged.toString());
+                            onChanged(text);
+                        },
+                        child: new Text('DONE'),
+                    ),
+                ],
             ),
         );
     }

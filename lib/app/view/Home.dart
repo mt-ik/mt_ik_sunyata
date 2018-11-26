@@ -33,13 +33,17 @@ class Home extends StatelessWidget {
   
     /// 生成tab标签
     _renderTab(IconData icon, String text) {
+        final List<Widget> list = [];
+        if (text != null) {
+           list.add(new Icon(icon, size: 22));
+           list.add(new Text(text));
+        } else {
+            list.add(new Icon(icon, size: 38));
+        }
         return new Tab(
             child: new Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                    new Icon(icon, size: 24),
-                    new Text(text),
-                ],
+                children: list,
             ),
         );
     }
@@ -48,7 +52,7 @@ class Home extends StatelessWidget {
         List<Widget> tabs = [
             _renderTab(MKICons.MAIN_KARMA, CommonUtils.getLocale(context).mainKarma),
             _renderTab(MKICons.MAIN_ORIGIN, CommonUtils.getLocale(context).mainOrigin),
-            _renderTab(MKICons.MAIN_SOUL, CommonUtils.getLocale(context).mainSoul),
+            _renderTab(MKICons.MAIN_SOUL, null),
             _renderTab(MKICons.MAIN_MIXED, CommonUtils.getLocale(context).mainMixed),
             _renderTab(MKICons.MAIN_SUNYATA, CommonUtils.getLocale(context).mainSunyata),
         ];
