@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:device_info/device_info.dart';
 
 class Sunyata extends StatefulWidget {
 
@@ -9,15 +11,27 @@ class Sunyata extends StatefulWidget {
 
 class _SunyataState extends State<Sunyata> {
 
+  static getDeviceInfo() async {
+    DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+    IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
+    print('Running on ${iosInfo.utsname.sysname} ${iosInfo.utsname.version}');
+  }
+  
+  @override
+    void initState() {
+      getDeviceInfo();
+      super.initState();
+    }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-            title: new Text('K_X'),
+            title: new Text('测试'),
             backgroundColor: Theme.of(context).primaryColor,
         ),
         body: new Center(
-            child: new Text('111'),
+            child: new Text('测试'),
         ),
     );
   }

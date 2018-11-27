@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:mt_ik_sunyata/app/style/MKStyle.dart';
 import 'package:mt_ik_sunyata/app/utils/CommonUtils.dart';
 
@@ -11,7 +12,7 @@ class PurifySoul extends StatefulWidget {
 
 class _PurifySoulState extends State<PurifySoul> {
     
-    String _text = '111';
+    String _text = '';
 
     void handleTextChanged(String newText) {
         setState(() {
@@ -43,8 +44,19 @@ class _PurifySoulState extends State<PurifySoul> {
                             icon: Icon(MKICons.SOUL_SEND),
                             tooltip: 'send',
                             onPressed: () {
-                                print(_text + '===========');
-                                // Navigator.of(context).pop();
+                                print(_text);
+                                if (_text == '') {
+                                    Fluttertoast.showToast(
+                                        msg: "您还尚未开启对话哈",
+                                        toastLength: Toast.LENGTH_SHORT,
+                                        gravity: ToastGravity.CENTER,
+                                        timeInSecForIos: 2,
+                                        bgcolor: "#63CA6C",
+                                        textcolor: '#ffffff',
+                                    );
+                                    return false; 
+                                }
+                                Navigator.of(context).pop();
                             },
                         ),
                     ],
@@ -92,8 +104,8 @@ class _TextInputState extends State<TextInput> {
                             controller: controller,
                             keyboardType: TextInputType.multiline,
                             decoration: InputDecoration(
-                              // contentPadding: EdgeInsets.all(10.0),
-                                hintText: '请开启灵魂对话',
+                                contentPadding: EdgeInsets.all(20.0),
+                                hintText: '开启真实的自己',
                                 border: InputBorder.none,
                             ),
                             maxLines: 100,
@@ -101,27 +113,51 @@ class _TextInputState extends State<TextInput> {
                         ),
                     ),
                     new Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
+                        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
+                        child: new Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                                new FlatButton(
+                                    // color: Colors.black87,
+                                    textColor: Colors.black54,
+                                    child: new Text('添加地点'),
+                                    onPressed: () {
+
+                                    },
+                                ),
+                            ],
+                        ),
+                    ),
+                    new Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
                         decoration: new BoxDecoration(
                             border: new Border(top: new BorderSide( width: 1.2, color: Colors.black87)),
                         ),
                         child: new Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                               new FlatButton(
-                                  child: new Text('录音'),
-                                  onPressed: () {
+                                new FlatButton(
+                                    color: Colors.black87,
+                                    textColor: Colors.white,
+                                    highlightColor: Colors.green,
+                                    disabledColor: Colors.grey,
+                                    child: new Text('拍摄'),
+                                    onPressed: () {
 
-                                  },
-                               ),
-                               new RaisedButton(
-                                  child: new Text('录像'),
-                                  onPressed: () {
+                                    },
+                                ),
+                                new RaisedButton(
+                                    color: Colors.black87,
+                                    textColor: Colors.white,
+                                    highlightColor: Colors.green,
+                                    disabledColor: Colors.grey,
+                                    child: new Text('相册 / 视频'),
+                                    onPressed: () {
 
-                                  },
-                               )
+                                    },
+                                ),
                             ],
-                        )
+                        ),
                     ),
                 ],
             ),

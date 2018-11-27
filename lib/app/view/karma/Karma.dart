@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mt_ik_sunyata/app/style/MKStyle.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Karma extends StatefulWidget {
 
@@ -8,12 +9,22 @@ class Karma extends StatefulWidget {
 }
 class _KarmaState extends State<Karma> {
 
+    _launchURL() async {
+        const url = 'sms:18518165912';
+        if (await canLaunch(url)) {
+            await launch(url);
+        } else {
+            throw 'Could not launch $url';
+        }
+    }
+
+
     @override
     Widget build(BuildContext context) {
         return Scaffold(
             appBar: new AppBar(
                 title: new Text(
-                    '业障'
+                    '测试'
                 ),
                 actions: <Widget>[
                     new IconButton(
@@ -26,7 +37,12 @@ class _KarmaState extends State<Karma> {
                 ],
             ),
             body: new Container(
-                child: new Text('111111'),
+                child: new Center(
+                    child: RaisedButton(
+                        onPressed: _launchURL,
+                        child: Text('Show Flutter homepage'),
+                    ),
+                ),
             ),
             floatingActionButton: new FloatingActionButton(
                 tooltip: 'Add', // used by assistive technologies

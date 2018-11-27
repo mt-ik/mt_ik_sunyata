@@ -19,17 +19,23 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  connectivity: '^0.3.2'
-  dio: ^1.0.6  #latest version
+  connectivity: '^0.3.2' # 网络连接
+  device_info: ^0.3.0 # 获取设备信息
+  dio: ^1.0.6  # http请求
   english_words: ^3.1.4
-  event_bus: '^1.0.1'
+  event_bus: ^1.0.1
   flutter_localizations:
     sdk: flutter
   flutter_redux: ^0.5.2
-  flutter_spinkit: "^3.0.0"
+  flutter_spinkit: ^3.0.0
+  fluttertoast: ^2.0.7 # toast 提示
   font_awesome_flutter: ^8.1.0
+  image_picker: ^0.4.10 #图像选择并拍摄照片
   json_annotation: ^2.0.0
   shared_preferences: ^ 0.4.3
+  transparent_image: ^0.1.0 # 图片加载
+  url_launcher: ^4.0.2 #url_launcher与webView的区别:url_launcher插件是用来唤起手机系统的默认应用，并浏览网页，发送短信，打电话，都是在本app应用外做事情，而webview是在应用内打开网页，相当于把浏览器内置到自己的app中了
+  video_player: ^0.7.2 # 视频播放
 
 dev_dependencies:
   flutter_driver:
