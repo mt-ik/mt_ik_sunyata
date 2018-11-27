@@ -87,20 +87,24 @@ class _TextInputState extends State<TextInput> {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                    new Container(
-                        color: Colors.white,
+                    new Expanded(
                         child: new TextField(
                             controller: controller,
                             keyboardType: TextInputType.multiline,
                             decoration: InputDecoration(
                               // contentPadding: EdgeInsets.all(10.0),
                                 hintText: '请开启灵魂对话',
+                                border: InputBorder.none,
                             ),
-                            maxLines: null,
+                            maxLines: 100,
                             onChanged: onChanged,
                         ),
                     ),
                     new Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
+                        decoration: new BoxDecoration(
+                            border: new Border(top: new BorderSide( width: 1.2, color: Colors.black87)),
+                        ),
                         child: new Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: <Widget>[
