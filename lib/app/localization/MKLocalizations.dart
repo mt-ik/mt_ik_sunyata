@@ -1,6 +1,4 @@
-import 'dart:developer';
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:mt_ik_sunyata/app/style/MKBase.dart';
 import 'package:mt_ik_sunyata/app/style/MKEn.dart';
@@ -25,8 +23,6 @@ class MKLocalizations {
   ///通过 Localizations 加载当前的 MKLocalizations
   ///获取对应的 MKBase
   static MKLocalizations of(BuildContext context) {
-    print(Localizations);
-    print(MKLocalizations);
     return Localizations.of(context, MKLocalizations);
   }
 }
