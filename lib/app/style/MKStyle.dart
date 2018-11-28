@@ -226,6 +226,8 @@ class MKICons {
     static const IconData MAIN_MINE = const IconData(0xe502, fontFamily: MKICons.FONT_FAMILY);
     static const IconData MAIN_SEARCH = const IconData(0xe61c, fontFamily: MKICons.FONT_FAMILY);
 
+    static const IconData GLOBAL_LOCATION = const IconData(0xe61c, fontFamily: MKICons.FONT_FAMILY);
+    
     static const IconData KARMA_SEARCH = const IconData(0xe60d, fontFamily: MKICons.FONT_FAMILY);
 
     static const IconData SOUL_EDIT = const IconData(0xe677, fontFamily: MKICons.FONT_FAMILY);
