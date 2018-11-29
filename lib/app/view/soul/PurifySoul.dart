@@ -93,7 +93,9 @@ class _TextInputState extends State<TextInput> {
 
     final TextEditingController controller = new TextEditingController();
    
-    String _bodyStr = "选项";
+    String _bodyStr = "肮脏ing";
+    bool _flag = false;
+    String _type = '文字模式';
     @override
     Widget build(BuildContext context) {
         return new Container(
@@ -101,37 +103,57 @@ class _TextInputState extends State<TextInput> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                     new Container(
-                        margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0.0),
+                        margin: EdgeInsets.symmetric(horizontal: 6.66, vertical: 0.0),
                         child: new Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                                new Text(_bodyStr),
-                                new PopupMenuButton(
-                                    onSelected: (String value) {
-                                        setState(() {
-                                            _bodyStr = value;                                      
-                                        });
-                                    },
-                                    // initialValue: '选项一',
-                                    itemBuilder: (BuildContext context) => <PopupMenuItem<String>> [
-                                        new PopupMenuItem(
-                                            value:"选项一",
-                                            child: new Text("选项一")
-                                        ),
-                                        new PopupMenuItem(
-                                            enabled: true,
-                                            value: "选项二",
-                                            child: new Text("选项二")
-                                        ),
-                                    ]
+                                new Container(
+                                    child: new Row(
+                                        children: <Widget>[
+                                            new Switch(
+                                                activeColor: Color(0xFF22ac38),
+                                                value: _flag,
+                                                onChanged: (bool flag) {
+                                                    setState(() {
+                                                        if (flag) {
+                                                            _type = '录音模式';
+                                                        } else {
+                                                            _type = '文字模式';
+                                                        }
+                                                        _flag = flag;                           
+                                                    });
+                                                },
+                                            ),
+                                            new Text(_type),
+                                        ],
+                                    ),
                                 ),
-                                new FlatButton(  
-                                    // color: Colors.black87,
-                                    textColor: Colors.black54,
-                                    child: new Text('添加地点'),
-                                    onPressed: () {
-
-                                    },
+                                
+                                new Container(
+                                    child: new Row(
+                                        children: <Widget>[
+                                            new Text(_bodyStr),
+                                            new PopupMenuButton(
+                                                onSelected: (String value) {
+                                                    setState(() {
+                                                        _bodyStr = value;                                      
+                                                    });
+                                                },
+                                                // initialValue: '肮脏ing',
+                                                itemBuilder: (BuildContext context) => <PopupMenuItem<String>> [
+                                                    new PopupMenuItem(
+                                                        value:"肮脏ing",
+                                                        child: new Text("肮脏"),
+                                                    ),
+                                                    new PopupMenuItem(
+                                                        enabled: true,
+                                                        value: "虚伪ing",
+                                                        child: new Text("虚伪"),
+                                                    ),
+                                                ]
+                                            ),
+                                        ],
+                                    ),
                                 ),
                             ],
                         ),
@@ -160,7 +182,8 @@ class _TextInputState extends State<TextInput> {
                                     child: new Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: <Widget>[
-                                            new Icon(MKICons.GLOBAL_LOCATION, size: 20.0),
+                                            new Icon(MKICons.GLOBAL_LOCATION, size: 16.0),
+                                            new Padding(padding: EdgeInsets.only(right: 5.0)),
                                             new Text('定位')
                                         ],
 
@@ -173,10 +196,10 @@ class _TextInputState extends State<TextInput> {
                         ),
                     ),
                     new Container(
-                        margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 0, bottom: 5.0),
+                        margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 0, bottom: 10.0),
                         // padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
                         decoration: new BoxDecoration(
-                            border: new Border(top: new BorderSide( width: 1.2, color: Colors.black87)),
+                            border: new Border(top: new BorderSide( width: 1.0, color: Colors.black38)),
                         ),
                         child: new Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -186,7 +209,13 @@ class _TextInputState extends State<TextInput> {
                                     textColor: Colors.white,
                                     highlightColor: Colors.green,
                                     disabledColor: Colors.grey,
-                                    child: new Text('拍摄'),
+                                    child: new Row(
+                                        children: <Widget>[
+                                            new Icon(MKICons.GLOBAL_CAMERA, size: 16.0),
+                                            new Padding(padding: EdgeInsets.only(right: 10.0),),
+                                            new Text('拍摄')
+                                        ],
+                                    ),
                                     onPressed: () {
 
                                     },
@@ -196,7 +225,13 @@ class _TextInputState extends State<TextInput> {
                                     textColor: Colors.white,
                                     highlightColor: Colors.green,
                                     disabledColor: Colors.grey,
-                                    child: new Text('相册 / 视频'),
+                                    child: new Row(
+                                        children: <Widget>[
+                                            new Icon(MKICons.GLOBAL_PHOTO, size: 16.0),
+                                            new Padding(padding: EdgeInsets.only(right: 10.0)),
+                                            new Text('相册 / 视频'),
+                                        ],
+                                    ),
                                     onPressed: () {
 
                                     },
