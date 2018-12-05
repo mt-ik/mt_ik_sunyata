@@ -1,5 +1,10 @@
+
+import 'dart:io';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:video_player/video_player.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:mt_ik_sunyata/app/style/MKStyle.dart';
 import 'package:mt_ik_sunyata/app/utils/CommonUtils.dart';
 
@@ -51,7 +56,7 @@ class _PurifySoulState extends State<PurifySoul> {
                                         toastLength: Toast.LENGTH_SHORT,
                                         gravity: ToastGravity.CENTER,
                                         timeInSecForIos: 2,
-                                        bgcolor: "#63CA6C",
+                                        bgcolor: "#ff0000",
                                         textcolor: '#ffffff',
                                     );
                                     return false; 
@@ -189,7 +194,7 @@ class _TextInputState extends State<TextInput> {
 
                                     ),
                                     onPressed: () {
-
+                                        print('我是定位。。。。');
                                     },
                                 ),
                             ],
