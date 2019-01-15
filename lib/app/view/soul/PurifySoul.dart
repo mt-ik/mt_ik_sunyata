@@ -1,10 +1,5 @@
-
-import 'dart:io';
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:video_player/video_player.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:mt_ik_sunyata/app/style/MKStyle.dart';
 import 'package:mt_ik_sunyata/app/utils/CommonUtils.dart';
 
@@ -49,15 +44,14 @@ class _PurifySoulState extends State<PurifySoul> {
                             icon: Icon(MKICons.SOUL_SEND),
                             tooltip: 'send',
                             onPressed: () {
-                                print(_text);
                                 if (_text == '') {
                                     Fluttertoast.showToast(
                                         msg: "您还尚未开启对话哈",
                                         toastLength: Toast.LENGTH_SHORT,
                                         gravity: ToastGravity.CENTER,
                                         timeInSecForIos: 2,
-                                        bgcolor: "#ff0000",
-                                        textcolor: '#ffffff',
+                                        backgroundColor: Colors.black,
+                                        textColor: Colors.white,
                                     );
                                     return false; 
                                 }
